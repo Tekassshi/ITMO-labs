@@ -2,7 +2,7 @@ package my_classes;
 
 import Interfaces.*;
 
-public class src_classes {
+public class current_scene {
 
     //Создание объектов и персонажей
 

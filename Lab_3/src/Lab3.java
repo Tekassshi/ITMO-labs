@@ -5,16 +5,16 @@ public class Lab3 {
     public static void main(String[] args) {
         System.setProperty("console.encoding","utf-8");
 
-        src_classes.Telescope telescope = new src_classes.Telescope("Телескоп");
+        current_scene.Telescope telescope = new current_scene.Telescope("Телескоп");
 
-        src_classes.Street street = new src_classes.Street("Улица");
-        src_classes.House house = new src_classes.House("Дом");
-        src_classes.Pavement pavement = new src_classes.Pavement("Мостовые");
+        current_scene.Street street = new current_scene.Street("Улица");
+        current_scene.House house = new current_scene.House("Дом");
+        current_scene.Pavement pavement = new current_scene.Pavement("Мостовые");
 
-        src_classes.Shorties shorties = new src_classes.Shorties("Коротышки", house);
-        src_classes.Znayka znayka = new src_classes.Znayka("Знайка", street);
-        src_classes.Steklyashkin steklyashkin = new src_classes.Steklyashkin("Стекляшкин", house);
-        src_classes.Policemens policemens = new src_classes.Policemens("Отряды полицейских", street);
+        current_scene.Shorties shorties = new current_scene.Shorties("Коротышки", house);
+        current_scene.Znayka znayka = new current_scene.Znayka("Знайка", street);
+        current_scene.Steklyashkin steklyashkin = new current_scene.Steklyashkin("Стекляшкин", house);
+        current_scene.Policemens policemens = new current_scene.Policemens("Отряды полицейских", street);
 
         System.out.println("");
 
