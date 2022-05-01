@@ -9,7 +9,7 @@ public class Lab3 {
 
         src_classes.Street street = new src_classes.Street("Улица");
         src_classes.House house = new src_classes.House("Дом");
-        src_classes.Pavement pavement= new src_classes.Pavement("Мостовые");
+        src_classes.Pavement pavement = new src_classes.Pavement("Мостовые");
 
         src_classes.Shorties shorties = new src_classes.Shorties("Коротышки", house);
         src_classes.Znayka znayka = new src_classes.Znayka("Знайка", street);
