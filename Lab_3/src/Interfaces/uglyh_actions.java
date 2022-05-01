@@ -1,6 +1,6 @@
-package my_classes;
+package Interfaces;
 
-interface uglyh_actions{
+public interface uglyh_actions{
     default public void appear(){
         System.out.print("появились ");
     }

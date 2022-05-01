@@ -1,5 +1,7 @@
 package my_classes;
 
+import Interfaces.*;
+
 public class src_classes {
 
     //Создание объектов и персонажей
@@ -75,7 +77,7 @@ public class src_classes {
     }
 
     //Коротышки
-    public static class Shorties extends Hero implements mainh_actions{
+    public static class Shorties extends Hero implements mainh_actions {
         public Shorties(String name, Place place){
             super(name,place);
         }
@@ -85,7 +87,7 @@ public class src_classes {
     }
 
     //Знайка
-    public static class Znayka extends Hero implements mainh_actions{
+    public static class Znayka extends Hero implements Interfaces.mainh_actions{
         public void whom(){
             System.out.print("Знайке ");
         }
@@ -102,7 +104,7 @@ public class src_classes {
     }
 
     //Отряды полицейских
-    public static class Policemens extends Hero implements uglyh_actions{
+    public static class Policemens extends Hero implements uglyh_actions {
         public void show_look(){
             System.out.print("в блестящих металлических касках.");
         }

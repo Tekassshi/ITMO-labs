@@ -1,6 +1,6 @@
-package my_classes;
+package Interfaces;
 
-interface mainh_actions{
+public interface mainh_actions{
     default public void fill(){
         System.out.print("заполнили ");
     }

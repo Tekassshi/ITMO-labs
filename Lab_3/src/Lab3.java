@@ -52,5 +52,6 @@ public class Lab3 {
         System.out.print(".");
 
         System.out.println("");
+
     }
 }
