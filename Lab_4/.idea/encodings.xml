@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="windows-1251" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/src/Exceptions/BadVisionEcxeption.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/Exceptions/FailStrikeException.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/Lab4.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/my_classes/Place.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/my_classes/Subject.java" charset="windows-1251" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
