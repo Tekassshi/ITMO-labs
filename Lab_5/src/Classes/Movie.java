@@ -16,37 +16,64 @@ public class Movie {
     public void setId(long n){
         this.id = n;
     }
+    public Long getId(){
+        return this.id;
+    }
 
     public void setName(String s){
         this.name = s;
+    }
+    public String getName(){
+        return this.name;
     }
 
     public void setCoordinates(Coordinates c){
         this.coordinates = c;
     }
+    public Coordinates getCoordinates(){
+        return this.coordinates;
+    }
 
-    public void setCreationDate(LocalDate d){
-        this.creationDate = d;
+    public void setCreationDate(){
+        this.creationDate = LocalDate.now();
+    }
+    public LocalDate getCreationDate(){
+        return this.creationDate;
     }
 
     public void setOscarsCount(Long c){
         this.oscarsCount = c;
     }
+    public Long getOscarsCount(){
+        return this.oscarsCount;
+    }
 
     public void setGoldenPalmCount(Long c){
         this.goldenPalmCount = c;
+    }
+    public long getGoldenPalmCount(){
+        return this.goldenPalmCount;
     }
 
     public void setGenre(MovieGenre g){
         this.genre = g;
     }
+    public MovieGenre getGenre(){
+        return this.genre;
+    }
 
     public void setMpaaRating(MpaaRating mpaaRating) {
         this.mpaaRating = mpaaRating;
     }
+    public MpaaRating getMpaaRating() {
+       return this.mpaaRating;
+    }
 
     public void setOperator(Person operator) {
         this.operator = operator;
+    }
+    public Person getOperator() {
+        return this.operator;
     }
 
     @Override
@@ -62,19 +89,5 @@ public class Movie {
                 ", mpaaRating=" + mpaaRating +
                 ", operator=" + operator +
                 '}';
-    }
-
-    public String toJson(){
-        return "{" + "\n \t \t" +
-                "\"id\":" + id + ",\n \t \t" +
-                "\"name\":" + name + ",\n \t \t" +
-                "\"coordinates\":" + coordinates + ",\n \t \t" +
-                "\"creationDate\":" + creationDate + ",\n \t \t" +
-                "\"oscarsCount\":" + oscarsCount + ",\n \t \t" +
-                "\"goldenPalmCount\":" + goldenPalmCount + ",\n \t \t" +
-                "\"genre\":" + genre + ",\n \t \t" +
-                "\"mpaaRating\":" + mpaaRating + ",\n \t \t" +
-                "\"operator\":" + operator + "\n \t \t" +
-                "},";
     }
 }
