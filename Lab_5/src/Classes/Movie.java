@@ -1,6 +1,7 @@
 package Classes;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Movie {
     private Long id;
@@ -27,15 +28,15 @@ public class Movie {
         return this.name;
     }
 
-    public void setCoordinates(Coordinates c){
-        this.coordinates = c;
+    public void setCoordinates(Coordinates coordinates){
+        this.coordinates = coordinates;
     }
     public Coordinates getCoordinates(){
         return this.coordinates;
     }
 
-    public void setCreationDate(){
-        this.creationDate = LocalDate.now();
+    public void setCreationDate(LocalDate localDate){
+        this.creationDate = localDate;
     }
     public LocalDate getCreationDate(){
         return this.creationDate;
@@ -78,16 +79,16 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
+                ", coordinates=" + coordinates.getCoordinates() +
                 ", creationDate=" + creationDate +
                 ", oscarsCount=" + oscarsCount +
                 ", goldenPalmCount=" + goldenPalmCount +
                 ", genre=" + genre +
                 ", mpaaRating=" + mpaaRating +
-                ", operator=" + operator +
-                '}';
+                ", operator=" + '{' + operator.getName() + ";" + operator.getHeight() + ";" +
+                operator.getEyeColor() + ";" + operator.getHairColor() + "}}";
     }
 }
