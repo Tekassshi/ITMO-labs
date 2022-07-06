@@ -1,0 +1,97 @@
+[
+	{
+		"id":"1",
+		"name":"Alex",
+		"coordinates": {			
+			"x":"15",
+			"y":"20.0"
+		},
+		"creationDate":"2022-07-04T18:13:45",
+		"oscarsCount":"145",
+		"goldenPalmCount":"24",
+		"genre":"ACTION",
+		"mpaaRating":"NC_17",
+		"operator": {
+			"Name":"Kim",
+			"Height":"185.0",
+			"EyeColor":"RED",
+			"HairColor":"ORANGE" 
+		}
+	},
+	{
+		"id":"2",
+		"name":"Jason",
+		"coordinates": {			
+			"x":"-123",
+			"y":"18.0"
+		},
+		"creationDate":"2022-07-04T18:20:50",
+		"oscarsCount":"12",
+		"goldenPalmCount":"1",
+		"genre":"SCIENCE_FICTION",
+		"mpaaRating":"PG_13",
+		"operator": {
+			"Name":"Stefan",
+			"Height":"164.0",
+			"EyeColor":"GREEN",
+			"HairColor":"YELLOW" 
+		}
+	},
+	{
+		"id":"3",
+		"name":"Amiran",
+		"coordinates": {			
+			"x":"547",
+			"y":"23.0"
+		},
+		"creationDate":"2022-07-04T19:01:37",
+		"oscarsCount":"2",
+		"goldenPalmCount":"134",
+		"genre":"SCIENCE_FICTION",
+		"mpaaRating":"NC_17",
+		"operator": {
+			"Name":"Nikita",
+			"Height":"195.0",
+			"EyeColor":"RED",
+			"HairColor":"RED" 
+		}
+	},
+	{
+		"id":"4",
+		"name":"Oleg",
+		"coordinates": {			
+			"x":"12",
+			"y":"-23.5"
+		},
+		"creationDate":"2022-07-06T19:07:01",
+		"oscarsCount":"2",
+		"goldenPalmCount":"15",
+		"genre":"FANTASY",
+		"mpaaRating":"PG",
+		"operator": {
+			"Name":"Flex",
+			"Height":"182.5",
+			"EyeColor":"YELLOW",
+			"HairColor":"GREEN" 
+		}
+	},
+	{
+		"id":"5",
+		"name":"Viktor",
+		"coordinates": {			
+			"x":"87",
+			"y":"234.0"
+		},
+		"creationDate":"2022-07-06T19:09:43",
+		"oscarsCount":"0",
+		"goldenPalmCount":"0",
+		"genre":"SCIENCE_FICTION",
+		"mpaaRating":"NC_17",
+		"operator": {
+			"Name":"Billy",
+			"Height":"163.5",
+			"EyeColor":"ORANGE",
+			"HairColor":"GREEN" 
+		}
+	}
+]

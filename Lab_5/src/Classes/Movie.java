@@ -1,13 +1,12 @@
 package Classes;
 
-import java.time.LocalDate;
-import java.util.Objects;
+import java.time.LocalDateTime;
 
 public class Movie {
     private Long id;
     private String name;
     private Coordinates coordinates;
-    private LocalDate creationDate;
+    private LocalDateTime creationDate;
     private Long oscarsCount;
     private long goldenPalmCount;
     private MovieGenre genre;
@@ -35,10 +34,10 @@ public class Movie {
         return this.coordinates;
     }
 
-    public void setCreationDate(LocalDate localDate){
+    public void setCreationDate(LocalDateTime localDate){
         this.creationDate = localDate;
     }
-    public LocalDate getCreationDate(){
+    public LocalDateTime getCreationDate(){
         return this.creationDate;
     }
 
