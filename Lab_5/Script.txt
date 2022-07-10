@@ -1,0 +1,9 @@
+remove_by_id
+
+remove_first
+
+remove_last
+
+shuffle
+
+exit

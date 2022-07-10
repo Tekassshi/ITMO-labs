@@ -22,7 +22,6 @@ public class CollectionManager {
         filepath = path;
     }
 
-
     public static Long getNewId(LinkedList collection){
         return ((Movie) collection.get(collection.size()-1)).getId() + 1;
     }
@@ -221,6 +220,8 @@ public class CollectionManager {
         fileReader.close();
 
         creationTime = LocalDateTime.now();
+
+        Collections.sort(collection);
 
         return collection;
     }

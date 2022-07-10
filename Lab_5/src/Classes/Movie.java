@@ -2,7 +2,7 @@ package Classes;
 
 import java.time.LocalDateTime;
 
-public class Movie {
+public class Movie implements Comparable{
     private Long id;
     private String name;
     private Coordinates coordinates;
@@ -74,6 +74,12 @@ public class Movie {
     }
     public Person getOperator() {
         return this.operator;
+    }
+
+    @Override
+    public int compareTo(Object o){
+        Movie movie = (Movie) o;
+        return (int)(this.id - movie.id);
     }
 
     @Override

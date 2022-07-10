@@ -11,7 +11,6 @@ public class Main {
         CollectionManager.setFilePath(filepath);
 
         CommandManager.run();
-
     }
 
 }
