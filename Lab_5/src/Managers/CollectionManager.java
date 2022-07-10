@@ -9,24 +9,49 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.IntStream;
 
+/** Класс, управляющий считыванием и записью коллекции из json файла
+ * @see CommandManager
+ * */
+
 public class CollectionManager {
 
+    /** Дата и время создания объекта*/
     private static LocalDateTime creationTime;
+
+
+    /** Путь к файлу с коллекцией*/
     private static String filepath;
 
+
+    /** Метод возвращает время и дату создания объекта
+     * @return LocalDateTime
+     * */
     public static LocalDateTime getCreationDateTime(){
         return creationTime;
     }
 
+    /** Метод устанавливает путь к файлу json
+     * @param path путь к файлу
+     * */
     public static void setFilePath(String path){
         filepath = path;
     }
 
+
+    /** Метод возвращает уникальное значение id при создании нового объекта
+     * @param collection входная коллекция
+     * @return Long
+     * */
     public static Long getNewId(LinkedList collection){
         return ((Movie) collection.get(collection.size()-1)).getId() + 1;
     }
 
-    //Вывод коллекции в json
+
+    /** Метод записывает коллекцию в json файл
+     * @param collection входная коллекция
+     * @see CollectionManager#jsonParce()
+     * @see CollectionManager#filepath
+     * */
     public static void toJson(LinkedList collection){
 
         String json_out = new String(filepath);
@@ -89,7 +114,13 @@ public class CollectionManager {
         }
     }
 
-    //Чтение коллекции из json файла
+
+    /** Метод считывает коллекцию из файла json
+     * @see CollectionManager#toJson(LinkedList)
+     * @see CollectionManager#filepath
+     * @throws IOException при ошибке чтения данных из файла
+     * @throws FileNotFoundException при отсутствии файла
+     * */
     public static LinkedList jsonParce() throws IOException, FileNotFoundException {
         LinkedList collection = new LinkedList<>();
 

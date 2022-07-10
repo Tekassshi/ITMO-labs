@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Collection.json" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Classes/Color.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Classes/Movie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Classes/Person.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Managers/CommandManager.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>

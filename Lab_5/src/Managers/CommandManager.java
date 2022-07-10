@@ -10,9 +10,19 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 
+/**Класс отвечающий за обработку переданных пользователем команд
+ * @see CollectionManager
+ */
+
 public class CommandManager {
 
-    // Основной метод для запуска программы
+    /**Основной метод для запуска программы.
+     * Считывает команды из консоли и вызывает методы в соответствии с введёнными данными
+     * @throws IndexOutOfBoundsException если передан один аргумент команде
+     * @throws IllegalArgumentException если передан некорректный аргумент команде
+     * @throws IOException если возникает ошибка со считыванием json
+     * @see CommandManager#help()
+     */
 
     public static void run() throws IOException {
 
@@ -120,8 +130,18 @@ public class CommandManager {
 
     }
 
-
-    // help - вывести справку по всем доступным командам
+    /** Метод выводит справку по всем доступным командам
+     * @see CommandManager#info(LinkedList)
+     * @see CommandManager#show(Movie)
+     * @see CommandManager#add(LinkedList)
+     * @see CommandManager#updateId(LinkedList)
+     * @see CommandManager#remove_by_id(LinkedList, String)
+     * @see CommandManager#save(LinkedList)
+     * @see CommandManager#execute_script(LinkedList, String)
+     * @see CommandManager#filter_less_than_mpaa_rating(LinkedList, MpaaRating)
+     * @see CommandManager#print_ascending(LinkedList)
+     * @see CommandManager#print_field_descending_genre(LinkedList)
+     * */
 
     public static void help(){
         String s = new String();
@@ -153,7 +173,7 @@ public class CommandManager {
         System.out.println(s);
     }
 
-    // info - вывести в стандартный поток вывода информацию о коллекции
+    /**Метод выводит информацию о коллекции */
 
     public static void info(LinkedList collection){
         System.out.println("\n--- Информация о коллекции ---");
@@ -162,7 +182,9 @@ public class CommandManager {
         System.out.println("Количество элементов: " + collection.size() + "\n");
     }
 
-    // Вывод одного объекта коллекции
+    /**Перегруженный метод выводит объект класса Movie
+     * @see Movie
+     * */
 
     public static void show(Movie m){
         String s = new String("");
@@ -203,7 +225,11 @@ public class CommandManager {
         System.out.println(s);
     }
 
-    // show - вывести в стандартный поток вывода все элементы коллекции в строковом представлении
+    /**Перегруженный метод выводит всю коллекцию состоящую из объектов Movie
+     * @see Movie
+     * @see LinkedList
+     * @see Collections
+     * */
 
     public static void show(LinkedList collection){
         String s = new String("");
@@ -255,7 +281,12 @@ public class CommandManager {
         System.out.println(s);
     }
 
-    // Функция для проверки состоит ли строка только из букв
+    /** Метод проверяет, состоит ли строка только из букв
+     * @return boolean (true - если состоит только из букв, false - если имеется символ, отличный от буквы)
+     * @param s входная строка
+     * @see CommandManager#isStringOfNumbers(String)
+     * */
+
     public static boolean isStringOfAlpha(String s){
         for (int i = 0; i < s.length(); i++) {
             if (!Character.isLetter(s.charAt(i))){
@@ -265,7 +296,12 @@ public class CommandManager {
         return true;
     }
 
-    // Функция для проверки состоит ли строка только из цифр
+
+    /** Метод проверяет, состоит ли строка только из цифр
+     * @return boolean (true - если состоит только из цифр, false - если имеется символ, отличный от цифры)
+     * @param s входная строка
+     * */
+
     public static boolean isStringOfNumbers(String s){
         for (int i = 0; i < s.length(); i++) {
             if (!(Character.isDigit(s.charAt(i)) || s.charAt(i) == '.')){
@@ -274,6 +310,13 @@ public class CommandManager {
         }
         return true;
     }
+
+
+    /** Метод добавляет новый объект класса Movie в коллекцию
+     * @param collection входная коллекция
+     * @see Movie
+     * @see Collections
+     * */
 
     public static void add(LinkedList collection){
         Movie m = new Movie();
@@ -452,7 +495,12 @@ public class CommandManager {
         System.out.println("\u001B[32m" + "\nОбъект успешно добавлен в коллекцию!\n" + "\u001B[0m");
     }
 
-    // Функция для проверки существования заданного id в коллекции
+
+    /** Метод проверяет, существует ли заданный id в коллекции
+     * @param collection входная коллекция
+     * @param id проверяемый id
+     * @throws Exception если id не существует
+     * */
 
     public static int isIdExist(LinkedList collection, String id) throws Exception {
         boolean f = false;
@@ -470,7 +518,10 @@ public class CommandManager {
         return 0;
     }
 
-    // Обновить id
+    /** Метод обновляет содержимое объекта Movie с заданным id в коллекции
+     * @param collection входная коллекция
+     * @see CommandManager#add(LinkedList)
+     * */
 
     public static void updateId(LinkedList collection){
         Scanner scanner = new Scanner(System.in);
@@ -677,7 +728,11 @@ public class CommandManager {
         CollectionManager.toJson(collection);
     }
 
-    // Удалить элемент по id
+
+    /** Метод удаляет объект Movie с заданным id из коллекции
+     * @param collection входная коллекция
+     * @param id значение для удаления
+     * */
 
     public static void remove_by_id(LinkedList collection, String id) {
         String inputValue;
@@ -705,12 +760,23 @@ public class CommandManager {
         }
     }
 
+
+    /** Метод сохраняет коллекцию в файл json
+     * @param collection входная коллекция
+     * */
+
     public static void save(LinkedList collection){
         Collections.sort(collection);
         CollectionManager.toJson(collection);
     }
 
-    // Вывести элементы, значение поля mpaaRating которых меньше заданного
+
+    /**
+     * Метод выводит элементы, значение поля MpaaRating которых меньше заданного
+     * @param collection входная коллекция
+     * @param rating значение MpaaRating
+     * @see MpaaRating
+     * */
 
     public static void filter_less_than_mpaa_rating(LinkedList collection, MpaaRating rating) {
         String inputValue;
@@ -745,7 +811,10 @@ public class CommandManager {
     }
 
 
-    // Вывести элементы в порядке возрастания хэш-кодов
+    /** Метод выводит все объекты коллекции в порядке возрастания хэш-кодов
+     * @param collection входная коллекция
+     * @see CommandManager#print_field_descending_genre(LinkedList)
+     * */
 
     public static void print_ascending(LinkedList collection){
         Collections.sort(collection, new SortByHashCode());
@@ -755,6 +824,12 @@ public class CommandManager {
         }
         Collections.sort(collection);
     }
+
+
+    /** Метод выводит все объекты класса MovieGenre коллекции в порядке убывания их порядка
+     * @param collection входная коллекция
+     * @see CommandManager#print_ascending(LinkedList)
+     * */
 
     public static void print_field_descending_genre(LinkedList collection){
         Collections.sort(collection, new SortByGenre());
@@ -767,7 +842,11 @@ public class CommandManager {
     }
 
 
-    // Считать и исполнить скрипт из указанного файла
+    /** Метод считывает и исполняет скрипт из файла. Команды записаны в файл в таком же виде,
+     * в каком их вводит пользователь в интерактивном режиме
+     * @param collection входная коллекция
+     * @param filename имя файла с командами
+     * */
 
     public static void execute_script(LinkedList collection, String filename) {
         Scanner consoleScanner = new Scanner(System.in);
